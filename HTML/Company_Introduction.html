@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회사소개</title>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- jQuery와 jQuery UI를 사용하여 웹 페이지에 다양한 JavaScript 기능을 구현-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <!-- jQuery UI는 사용자 인터랙션과 시각적 효과를 추가하는 데 사용 -->
+  <script src="https://openlayers.org/en/v6.15.1/build/ol.js"></script> <!-- OpenLayers 자바스크립트 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+  <script src="https://kit.fontawesome.com/2c827c8cca.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
+  <link rel="stylesheet" href="https://openlayers.org/en/v6.15.1/css/ol.css" type="text/css"> <!-- OpenLayers 스타일 시트 -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> <!-- Boxicons CDN 링크 -->
+  <link rel="stylesheet" href="../CSS/Company_Introduction.css">
+  <!-- <link rel="stylesheet" href="../JAVASCRIPT/Company_Introduction.js"> -->
+</head>
+
+<body>
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 상단(header) 마크업 -->
+
+  <header>
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <a class="header-a" href="../HTML/Intro.html"><img class="header-image" src="../HTML/images/로고/메인_로고.png"></a>
+      </div>
+
+      <div class="main_menu">
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Company_Introduction.html"><i
+                class="fa-solid fa-building-circle-exclamation"></i>&nbsp;&nbsp;<b><span>회사소개</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Affiliated_Store1.html"><i
+                class="fa-solid fa-house"></i>&nbsp;&nbsp;<b><span>가맹점</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Shop.html"><i class="fa-solid fa-shop"></i>&nbsp;&nbsp;<b><span>SHOP</pan>
+              </b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Pet_Sitter.html"><i
+                class="fa-solid fa-person-breastfeeding"></i>&nbsp;&nbsp;<b><span>펫시터</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Customer_Service.html"><i
+                class="fa-solid fa-phone-flip"></i>&nbsp;&nbsp;<b><span>고객센터</span></b></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main_access">
+        <ul class="navbar_access">
+          <li><a class="header-a" href="../HTML/Login.html"><b>로그인</b></a></li>
+          <li><a class="header-a" href="../HTML/Join.html"><b>회원가입</b></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 사이드바 메뉴 마크업 -->
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <div class="logo_name">회사소개</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#sec-01">
+          <i class="fa-solid fa-1"></i>
+          <span class="links_name">인사말</span>
+        </a>
+        <span class="tooltip">인사말</span>
+      </li>
+      <li>
+        <a href="#sec-02">
+          <i class="fa-solid fa-2"></i>
+          <span class="links_name">조직도</span>
+        </a>
+        <span class="tooltip">조직도</span>
+      </li>
+      <li>
+        <a href="#sec-03">
+          <i class="fa-solid fa-3"></i>
+          <span class="links_name">연혁</span>
+        </a>
+        <span class="tooltip">연혁</span>
+      </li>
+      <li>
+        <a href="#sec-04">
+          <i class="fa-solid fa-4"></i>
+          <span class="links_name">오시는 길</span>
+        </a>
+        <span class="tooltip">오시는 길</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 본문 내용(main) 마크업 -->
+
+  <!-- 인사말 -->
+  <section class="sec-01" id="sec-01">
+    <div class="container">
+      <h2 class="main-title">Greeting</h2>
+      <div class="content">
+        <div class="image">
+          <img src="../HTML/images/회사소개/인사.jpg">
+        </div>
+        <div class="text-box">
+          <h3>인사말</h3>
+          <p>AIMGO는 스페인어에서 파생된 '친구'를 의미합니다. 반려동물과 고객님들에게 꼭 필요한 친구가 되겠습니다.
+            <br><br>
+            국내 반려동물 양육인구 602만, 가구 1306만명으로 반려동물의 가구비율은 25.4%로 네 가구 중에 한 가구로 이제 반려동물은 친구이자 가족입니다.
+            <br><br>
+            이러한 시대에 더 나은 반려동물의 삶을 만들기 위한 AMIGO는 반려동물을 소중히 여기는 마음으로부터 고객을 감동시키는 펫 감성 전문브랜드로 전국 160개 가맹점 및 온라인 SHOP과 함께
+            펫시터 매칭 서비스까지 반려동물을 위한 올인원(ALL-IN-ONE) 서비스를 제공하고 있습니다.
+            <br><br>
+            앞으로도 반려동물과 함께 성장하는 국내 유일 NO.1 펫 브랜드로 고객님들과 소통하며 친구처럼 더욱 가까이 가고자 노력하겠습니다.
+            <br><br>
+            감사합니다.
+            <br><br>
+          </p>
+          <p class="p"><b class="b">-AMIGO 대표이사 정상욱-</b></p>
+        </div>
+      </div>
+      <div class="media-icons">
+        <a href="https://www.facebook.com/" class="icon" target="_blank"><img class="fab fa-facebook"
+            src="../HTML/images/아이콘/페이스북_로고.png" alt=""></img></a>
+        <a href="https://www.instagram.com/" class="icon" target="_blank"><img class="fab fa-instagram"
+            src="../HTML/images/아이콘/인스타그램_로고.png" alt=""></a>
+        <a href="https://twitter.com/" class="icon" target="_blank"><img class="fab fa-twitter"
+            src="../HTML/images/아이콘/트위터_로고.png" alt=""></img></a>
+        <a href="https://www.youtube.com/" class="icon" target="_blank"><img class="fab fa-youtube"
+            src="../HTML/images/아이콘/유튜브_로고.png" alt=""></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 조직도 -->
+  <section class="sec-02 s2" id="sec-02">
+    <div class="container">
+      <h3 class="section-title">Organization chart</h3>
+      <div class="content">
+        <div class="image">
+          <img class="o-chart" src="../HTML/images/회사소개/회사소개_조직도.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 연혁 -->
+  <section class="sec-03" id="sec-03">
+    <div class="container">
+      <h3 class="section-title">History</h3>
+      <div class="process-wrapper">
+        <div id="progress-bar-container">
+          <ul>
+            <li class="step step01 active">
+              <div class="step-inner">2023.12</div>
+            </li>
+
+            <li class="step step02">
+              <div class="step-inner">2024.01</div>
+            </li>
+
+            <li class="step step03">
+              <div class="step-inner">2024.02</div>
+            </li>
+
+            <li class="step step04">
+              <div class="step-inner">2024.03</div>
+            </li>
+
+            <li class="step step05">
+              <div class="step-inner">2024.04</div>
+            </li>
+          </ul>
+
+          <div id="line">
+            <div id="line-progress"></div>
+          </div>
+        </div>
+
+        <div id="progress-content-section">
+          <div class="section-content discovery active">
+            <h2>프로젝트 실행</h2>
+            <p>본 프로젝트는 스타필드의 쇼핑, 레저, 힐링이 한 곳에서 이뤄지는 ONE DAY TRIP의 복합쇼핑몰의 개념에서 시작합니다. 초기에는 여행 플랫폼을 구상하였으나, 지역 및 데이터의 제한으로
+              복합 쇼핑몰의 컨셉과 어울리지 않다는 판단하에 최종적으로 정한 것은 단일 주제의 반려동물 관련 플랫폼의 회사로서, 오프라인 가맹점(병원/카페/미용/호텔 등)과 온라인 SHOP(쇼핑몰) 그리고
+              펫시터(매칭 서비스)와 고객센터를 구현하여 반려동물의 케어를 위한 올인원 서비스를 제공하고자 합니다.<br><br><br><br></p>
+          </div>
+
+          <div class="section-content strategy">
+            <h2>전체 설계 및 구현</h2>
+            <p>반려동물 플랫폼의 구성단계에서는 회사소개, 가맹점, SHOP, 펫시터, 고객센터로 기본 메뉴로 설정하고, 1단계로 인트로, 로그인, 회원가입, 상단 메뉴바를 구현하고, 각 페이지의 디자인
+              및 내용에 대한 수정 과정 후 2단계로 각 메뉴 페이지인 회사소개, 가맹점, SHOP, 펫시터, 고객센터의 하위 메뉴를 구현함에 있어서는 실제적인 구현에 애로사항 및 전반적인 수정 과정에 각
+              담당자별로 많은 어려움을 겪기도 하였습니다 3단계로 기본 메뉴 구현과 함께 다소 상호협조가 필요했던 마이페이지와 메인페이지의 구현을 하고, 4단계로 각 페이지별 구현된 프로젝트를 모듈화하여
+              하나의 홈페이지로 완성하고, 시연 과정을 영상화한 후 5단계로 본 프로젝트의 준비과정 및 설계 그리고 구현 과정을 종합적으로 발표자료화(PPT) 하였습니다.</p>
+          </div>
+
+          <div class="section-content creative">
+            <h2>프로젝트 아미고</h2>
+            <p>AIMGO는 스페인어에서 파생된 '친구'를 의미합니다. 이는 인사말에서 언급했듯이 현재 시대의 반려동물은 친구이자 가족이기에 AMIGO의 궁극적인 목표는 평생의 친구인 반려동물과 고객들에게
+              신뢰와 감동을 주는 반려동물 케어를 위한 올인원 서비스를 제공하고자 함입니다. 더 나아가 AMIGO는 펫 프렌들리 정책에 적극 동참함으로써 반려동물과 함께 행복한 삶을
+              지향합니다.<br><br><br><br><br></p>
+          </div>
+
+          <div class="section-content production">
+            <h2>아미고 제단 설립</h2>
+            <p>AMIGO는 국내 동물보호단체 및 대한수의학회 인증 동물병원, 한국애견미용인협회 그리고 펫-마트 등 국내 반려동물 관련 기관 및 업체들과의 업무제휴(MOU)를 통한 '국내 최초 반려동물의
+              케어를 위한 올인원 서비스 플랫폼'을 구축하고, AMIGO 재단을 설립하여 최초 설립자인 정상욱 이사장이 취임하였습니다.<br><br><br><br><br></p>
+          </div>
+
+          <div class="section-content analysis">
+            <h2>아미고 위드 더 펫스</h2>
+            <p>AMIGO with the pets은 반려동물과 함께 행복함을 추구하는 고객의 마음을 담고자, 반려동물 산업의 특성상 샵인샵 형태로 운영됨에 따라 이를 조직적이고 체계적으로 관리하고 성장
+              및 발전시킬 수 있는 주체의 필요성이 요구되는 바에 따라서 펫 프렌들리 정책이 국내에서도 적극적으로 동참 유도하고자 AMIGO 재단 및 회사를 설립하여 고객의 행복과 반려동물의 건강한 삶을
+              함께 공유할 수 있도록 AMIGO가 함께하고자 만들어졌습니다.<br><br><br><br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 오시는 길 -->
+  <section class="sec-04" id="sec-04">
+    <div class="container">
+      <h3 class="section-title">Directions</h3>
+      <div class="content">
+        <div class="media-info">
+          <li> 서울특별시</li>
+          <li> 관악구</li>
+          <li> 봉천로 227</li>
+          <li> (봉천동 972-5)</li>
+          <li> 보라매샤르망</li>
+        </div>
+        <div class="image">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 하단(footer) 마크업 -->
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-wrap">
+
+      <!-- 좌측 로고 부분 -->
+      <div class="logo">
+        <a href="../HTML/Intro.html" class="only_footer"><img class="logo" src="../HTML/images/로고/메인_로고.png" width="210"
+            height="89"></a>
+      </div>
+
+      <!-- 센터 부분 -->
+      <div class="footer-center">
+        <p><i class="fa-solid fa-location-dot"></i><b>서울시 관악구 봉천로 227 보라매샤르망</b></p>
+        <p><i class="fa-regular fa-copyright"></i><b>2020 한국정보교육원 All Rights Reserved.</b></p>
+
+        <i class="fa-solid fa-phone"></i><b>02-855-9611</b>
+        <i class="fa-solid fa-fax"></i><b>02-856-9742</b>
+        <i class="fa-regular fa-envelope"></i><b>amigo@naver.com</b>
+      </div>
+
+      <!-- SNS아이콘 부분 -->
+      <div class="sns-wrap">
+        <a href="https://www.instagram.com/" class="only_footer" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="40"></a>
+        <a href="https://www.youtube.com/" class="only_footer" target="_blank"><img
+            src="https://static-00.iconduck.com/assets.00/youtube-icon-512x511-qrlabbtf.png" width="40"></a>
+        <a href="https://www.facebook.com/" class="only_footer" target="_blank"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"
+            width="40"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 자바 스크립트 파트 -->
+
+  <script>
+    //새로고침 했을 때 맨 위로 이동
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    //연혁(History) 파트에만 해당
+
+    //타임라인바 클릭 시 타임라인바 활성화(색깔 변경)
+    $(".step").click(function () {
+      $(this).addClass("active").prevAll().addClass("active");
+      $(this).nextAll().removeClass("active");
+    });
+
+    //타임라인바 클릭 시 해당 파트(step01) 타임라인 본문 내용 활성화
+    $(".step01").click(function () {
+      $("#line-progress").css("width", "3%");
+      $(".discovery").addClass("active").siblings().removeClass("active");
+    });
+
+    //타임라인바 클릭 시 해당 파트(step02) 타임라인 본문 내용 활성화
+    $(".step02").click(function () {
+      $("#line-progress").css("width", "25%");
+      $(".strategy").addClass("active").siblings().removeClass("active");
+    });
+
+    //타임라인바 클릭 시 해당 파트(step03) 타임라인 본문 내용 활성화
+    $(".step03").click(function () {
+      $("#line-progress").css("width", "50%");
+      $(".creative").addClass("active").siblings().removeClass("active");
+    });
+
+    //타임라인바 클릭 시 해당 파트(step04) 타임라인 본문 내용 활성화
+    $(".step04").click(function () {
+      $("#line-progress").css("width", "75%");
+      $(".production").addClass("active").siblings().removeClass("active");
+    });
+
+    //타임라인바 클릭 시 해당 파트(step05) 타임라인 본문 내용 활성화
+    $(".step05").click(function () {
+      $("#line-progress").css("width", "100%");
+      $(".analysis").addClass("active").siblings().removeClass("active");
+    });
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    //회사소개 페이지 전체 애니메이션 적용하기
+
+    //ScrollReveal 홈페이지를 활용하여 자바 스크립트 생성하기
+    //ScrollReval 함수 스타일 정의
+    ScrollReveal({
+      reset: true, //요소가 나타나고 숨겨질 때 애니메이션 효과를 리셋하는 여부를 결정
+      distance: '60px', //요소가 이동하는 거리를 설정
+      duration: 2500, //애니메이션의 지속 시간을 설정
+      delay: 400 //애니메이션이 시작되기 전에 대기하는 시간을 설정
+    });
+
+    //ScrollReveal 함수를 이용하여 애니메이션이 나타나는 딜레이 설정
+    ScrollReveal().reveal('.main-title, .section-title', { dalay: 500, origin: 'top' });
+
+    ScrollReveal().reveal('.text-box', { dalay: 500, origin: 'right' });
+    ScrollReveal().reveal('.image', { dalay: 500, origin: 'right' });
+
+    ScrollReveal().reveal('.sec-02 .image', { dalay: 500, origin: 'bottom' });
+    ScrollReveal().reveal('#progress-content-section', { dalay: 500, origin: 'bottom' });
+    ScrollReveal().reveal('.media-icons i, .media-icons img', { dalay: 500, origin: 'bottom', interval: 200 });
+
+    ScrollReveal().reveal('#progress-bar-container', { dalay: 500, origin: 'left', });
+    ScrollReveal().reveal('.sec-01 .image', { dalay: 500, origin: 'left' });
+    ScrollReveal().reveal('.media-info li', { dalay: 500, origin: 'left', interval: 200 });
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    //회사소개 페이지의 하위 메뉴인 오시는 길에 쓰이는 지도 생성
+
+    //새로운 OpenLayers 지도 만들기
+    const map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([126.927081, 37.489996]), //한국정보교육원의 경도와 위도
+        zoom: 16
+      }),
+      size: [500, 500]
+    });
+
+    //아이콘 스타일 정의
+    const iconStyle = new ol.style.Style({
+      image: new ol.style.Icon({
+        anchor: [0.5, 1],
+        src: 'https://openlayers.org/en/latest/examples/data/icon.png' //핀 아이콘 이미지 경로
+      })
+    });
+
+    //핀을 표시할 위치 정의
+    const pinLocation = ol.proj.fromLonLat([126.927081, 37.489996]);
+
+    //Feature 생성
+    const pinFeature = new ol.Feature({
+      geometry: new ol.geom.Point(pinLocation)
+    });
+
+    //스타일 설정
+    pinFeature.setStyle(iconStyle);
+
+    //Vector Layer 생성
+    const vectorLayer = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        features: [pinFeature]
+      })
+    });
+
+    //WMS(웹 맵 서비스)레이어를 지도에 추가
+    map.addLayer(vectorLayer);
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    //사이드 메뉴바에 필요한 자바스크립트 생성하기
+
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+    });
+
+    function menuBtnChange() {
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+  </script>
+</body>
+
+</html>

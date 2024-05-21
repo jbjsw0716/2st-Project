@@ -1,0 +1,564 @@
+/* 전체 규격 정하기 및 글꼴 선정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 헤더(Header) 파트 */
+
+/* 인트로 상단(헤더) 위치 선정 */
+header {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 200px;
+  transition: 0.5s ease;
+}
+
+/* 인트로 상단 AMIGO 스타일 지정 */
+header .brand {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 해당 클래스의 상대적 위치 주기 */
+header .navigation {
+  position: relative;
+}
+
+/* 인트로 상단 메뉴 스타일 지정 */
+header .navigation .navigation-items a {
+  position: relative;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s ease;
+}
+
+/* 해당 요소의 내용 앞에 가상으로 삽입된 요소 선택(카테고리에 밑줄 주기) */
+header .navigation .navigation-items a::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 0;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+/* 해당 메뉴에 마우스를 올렸을 때 이벤트 효과 나타내기(카테고리 밑줄 크기 지정) */
+header .navigation .navigation-items a:hover::before {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 홈 섹션(Home Section) 파트 */
+
+/* 해당 섹션 스타일 지정(위치 지정)*/
+section {
+  padding: 100px 200px;
+}
+
+/* 해당 클래스(섹션 안) 스타일 지정(중간으로 배치) */
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #2696e9;
+}
+
+/* 본문 내용 스타일 지정 */
+.home .content {
+  z-index: 888;
+  color: #fff;
+  width: 70%;
+  margin-top: 50px;
+}
+
+/* 본문 내용 스타일 지정(h1) */
+.home .content h1 {
+  font-size: 4em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+
+/* 본문 내용 스타일 지정(span) */
+.home .content h1 span {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* 본문 내용 스타일 지정(p) */
+.home .content p {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 65px;
+}
+
+/* 본문 내용 스타일 지정(a) */
+.home .content a {
+  background: rgba(225, 225, 225, 0.3);
+  padding: 15px 35px;
+  color: rgb(151, 19, 19);
+  font-size: 1.4em;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 섹션 파트 속의 백그라운드 비디오(Background Video) 파트 */
+.home video {
+  z-index: 000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 반응형 미디어 쿼리(Responsiva Media queries) 파트 */
+
+/* 브라우저의 너비가 1040px 이하일 때 적용 */
+@media (max-width: 1040px) {
+  /* 반응형 미디어 쿼리 헤더 위치 조정 */
+  header {
+    padding: 12px 20px;
+  }
+
+  /* 반응형 미디어 쿼리 섹션 위치 조정 */
+  section {
+    padding: 100px 20px;
+  }
+
+  /* 반응형 미디어 쿼리에서 메뉴바 가리기(햄버거 클릭 시 보여주기 위해) */
+  header .navigation {
+    display: none;
+  }
+  
+  /* -------------------------------------------------------------------------------------------------------------------------------------------- */
+  /* 반응형 미디어 쿼리 파트 속 반응형 네비게이션 메뉴와 메뉴 버튼(햄버거)(Responsive Navigation Menu(With Menu Button)) 파트 */
+
+  /* 햄버거 버튼 스타일 지정(활성화 전) - 열기 버튼 */
+  .menu-btn {
+    background: url(../HTML/images/아이콘/메뉴.png) no-repeat;
+    background-size: 50px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  /* 햄버거 버튼 스타일 지정(활성화 후) - 닫기 버튼 */
+  .menu-btn.active {
+    z-index: 999;
+    background: url(../HTML/images/아이콘/닫기.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+
+  /* 반응형 미디어 쿼리에서 햄버거 클릭시(.active) 메뉴바 보여주기 및 메뉴바 위치 지정 */
+  header .navigation.active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 햄버거 클릭시 뒷배경색 지정 */
+    background: rgba(1, 1, 1, 0.5);
+  }
+
+  /* 반응형 미디어 쿼리에서 햄버거 클릭 시 카테고리 스타일 지정(a) */
+  header .navigation .navigation-items a {
+    color: #222;
+    font-size: 1.2em;
+    margin: 20px;
+  }
+
+  /* 반응형 미디어 쿼리에서 햄버거 클릭 시 카테고리에 밑줄 주기 */
+  header .navigation .navigation-items a::before {
+    background: #222;
+    height: 5px;
+  }
+
+  /* 반응형 미디어 쿼리에서 햄버거 클릭 시(.active) 전체 메뉴바 스타일 지정 */
+  header .navigation.active .navigation-items {
+    background: #fff;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    /* 그림자가 적용이 안되는 것처럼 느껴짐.. */
+    box-shadow: 0 5px 25px rgb(1, 1, 1 / 20%);
+  }
+}
+
+
+/* 모달 창 스타일 */
+.modal {
+  display: none;
+  /* 초기에는 숨김 상태 */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 배경 투명도 */
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 520px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* 모달 닫기 버튼 스타일 */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 로그인 css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+body{
+  font-family: "Nanum Gothic", sans-serif;
+  min-height: 100vh;
+  /* background: linear-gradient(to right, #fff6a5,#b8ffdc); */
+  /* background: linear-gradient(to right, #fff6a5,rgb(255, 255, 255),#fff6a5); */
+  background: rgb(242, 229, 217);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 회원가입 전체 */
+.login-card{
+  width: 450px;
+  background: rgba(255, 226, 189, 0.308);
+  padding: 4rem;
+  border-radius: 5px;
+  position: relative;
+  border: 2px solid rgb(214, 183, 153);
+}
+/* 회원가입 전체의 레이아웃 */
+/*가상 앞에 붙음*/
+/* .login-card::before{  
+  content: '';
+  position: absolute;
+  background: rgba(145,255,123,0.3);
+  inset: 0;
+  transform: rotate(-5deg);
+  z-index: -1;
+} */
+/* 로고 */
+.login-card-logo{
+  margin-bottom: 2rem;
+}
+/* 로고 이미지 */
+.login-card-logo img{
+  width: 200px;
+}
+/* 로고 헤더 풋터 */
+.login-card-logo,
+.login-card-header,
+.login-card-footer{
+  text-align: center;
+}
+/* 비밀번호를 잃어버리셨나요? */
+.login-card a {
+  text-decoration: none;
+  color: #35339a;
+  text-align: center;
+  margin: auto;
+}
+/* 비번 잃어버림? 마우스 올렸을때 */
+.login-card a:hover{
+  text-decoration: underline; /*마우스 올렸을 때 밑 선 나옴*/
+}
+/* 헤더 */
+.login-card-header {
+  margin-bottom: 2rem;
+}
+/* 헤더의 '로그인' */
+.login-card-header h1{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+/* 헤더 안에 '로그인','입력해주세요' */
+.login-card-header h1+div{
+  font-size: calc(1rem*.8); /*크기 조절할 때 반응?*/
+  opacity: .8; /*투명도*/
+}
+/* 입력창부터 - 로그인 버튼까지 */
+.login-card-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* '아이디를 입력,비밀번호를 입력' */
+.login-card-form .form-item{
+  position: relative;
+}
+/* 위의 아이콘 */
+.login-card-form .form-item .form-item-icon{
+  position: absolute;
+  top: .82rem;
+  left: 1.4rem;
+  font-size: 1.3rem;
+  opacity: .6;
+}
+/* 비밀번호를 잃어버리셨나요? */
+.login-card-form .form-item-other{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(1rem*.8);
+  margin-bottom: .5rem;
+}
+/* 회원가입으로 넘어가는 */
+.login-card-footer{
+  margin: 1.5rem;
+  font-size: calc(1rem*.8);
+}
+/* 인풋 안에 글씨 */
+.login-card input[type="text"],
+.login-card input[type="password"]{
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,.3);
+  padding: 1rem 1.5rem;
+  padding-left: calc(1rem * 3.5);
+  width: 100%;
+  border-radius: 100px;
+  transition: background .5s;
+}
+/* 인풋 눌렀을때 */
+.login-card input:focus{
+  background: white;
+}
+/* 로그인 버튼 */
+.login-card-form button{
+  /* background: black; */
+  background: white;
+  /* color: white; */
+  color: black;
+  padding: 1rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background .5s;
+  border: none;
+}
+/* 로그인 버튼 마우스 올렸을때 */
+.login-card-form button:hover{
+  background-color: rgba(196, 143, 94, 0.322);
+  cursor: pointer;
+}
+
+/* 반응형 */
+
+@media (max-width: 768px) {
+
+  body{
+      padding: 2rem 0;
+  }
+  .login-card{
+      width: 300px;
+      padding: 2rem;
+  }
+}
+/* 회원가입 */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins',sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(242, 229, 217);
+}
+/* 회원가입 전체 */
+#form{
+  width: 450px;
+  background: rgba(255, 226, 189, 0.308);
+  padding: 4rem;
+  border-radius: 5px;
+  position: relative;
+  border: 2px solid rgb(214, 183, 153);
+}
+/* 회원가입 전체의 앞 레이아웃 */
+/* #form:before{
+  content: '';
+  position: absolute;
+  background: rgba(145,255,123,0.3);
+  inset: 0;
+  transform: rotate(-5deg);
+  z-index: -1;
+} */
+/* 로고 */
+.logo img{
+  width: 200px;
+  margin: auto 60px;
+}
+/* 회원가입 */
+#form h1{
+  color: #0f2027;
+  text-align: center;
+}
+/* 회원가입 버튼 */
+#form button{
+  background: white;
+  color: black;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background .5s;
+  border: none;
+  margin : 3rem 0;
+}
+/* 회원가입 버튼 마우스 올렸을때 */
+#form button:hover{
+  background-color: rgba(196, 143, 94, 0.322);
+  cursor: pointer;
+}
+/* 각각의 인풋 */
+.input-control{
+  /* display: flex; */
+  /* flex-direction: column; */
+  margin-top: 15px;
+  position: relative;
+}
+/* 주소 */
+.input-control input[type="addr"]{
+  margin-top: 30px;
+}
+/* 상세주소 */
+.input-control input[type="addr2"]{
+  margin-top: 10px;
+}
+/* 각 아이콘 */
+.input-control #form-item-icon{
+  position: relative;
+}
+/* 각 아이콘 */
+.input-control #form-item-icon{
+  position: absolute;
+  top: .82rem;
+  left: 1.4rem;
+  font-size: 1.2rem;
+  opacity: .6;
+}
+/* 주소 아이콘 */
+.input-control #form-item-icon-zip{
+  position: absolute;
+  top: .82rem;
+  left: 1.4rem;
+  font-size: 1.03rem;
+  opacity: .6;
+}
+/* 각 인풋 타입 */
+.input-control input[type="userneme"],
+.input-control input[type="email"],
+.input-control input[type="text"],
+.input-control input[type="password"],
+.input-control input[type="date"],
+.input-control input[type="addr"],
+.input-control input[type="addr2"]{
+  border: none;
+  border-radius: 100px;
+  display: block;
+  font-size: 12px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  background: rgba(255,255,255,.3);
+  transition: background .5s;
+}
+/* 생년월일 */
+.input-control #birthday{
+  text-indent: 15px;
+  color: #777;
+}
+/* 인풋에 텍스트 위치,포커스 조절 */
+.input-control input{
+  text-indent: 30px;
+}
+.input-control input:focus{
+  background: white;
+}
+.input-control input:focus{
+  outline: 0;
+}
+
+/* 에러났을때 */
+.input-control.success input{
+  border-color: #09c372
+}
+.input-control.error input{
+  border-color: #ff3860;
+}
+.input-control .error{
+  color: #ff3860;
+  font-size: 12px;
+  height: 13px;
+  text-align: right;
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../CSS/Shop.css">
+  <script src="../JAVASCRIPT/Shop.js"></script>
+
+  <script src="https://kit.fontawesome.com/4766bce069.js" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> <!-- Boxicons CDN 링크 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://kit.fontawesome.com/2c827c8cca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 상단(header) 마크업 -->
+
+  <header>
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <a class="header-a" href="../HTML/Intro.html"><img class="header-image" src="../HTML/images/로고/메인_로고.png"></a>
+      </div>
+
+      <div class="main_menu">
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Company_Introduction.html"><i
+                class="fa-solid fa-building-circle-exclamation"></i>&nbsp;&nbsp;<b><span>회사소개</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Affiliated_Store1.html"><i
+                class="fa-solid fa-house"></i>&nbsp;&nbsp;<b><span>가맹점</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Shop.html"><i class="fa-solid fa-shop"></i>&nbsp;&nbsp;<b><span>SHOP</pan>
+              </b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Pet_Sitter.html"><i
+                class="fa-solid fa-person-breastfeeding"></i>&nbsp;&nbsp;<b><span>펫시터</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Customer_Service.html"><i
+                class="fa-solid fa-phone-flip"></i>&nbsp;&nbsp;<b><span>고객센터</span></b></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main_access">
+        <ul class="navbar_access">
+          <li><a class="header-a" href="../HTML/Login.html"><b>로그인</b></a></li>
+          <li><a class="header-a" href="../HTML/Join.html"><b>회원가입</b></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 사이드바 메뉴 마크업 -->
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <div class="logo_name">SHOP</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-1"></i>
+          <span class="links_name">간식</span>
+        </a>
+        <span class="tooltip">간식</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-2"></i>
+          <span class="links_name">사료</span>
+        </a>
+        <span class="tooltip">사료</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-3"></i>
+          <span class="links_name">애견용품</span>
+        </a>
+        <span class="tooltip">애견용품</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-4"></i>
+          <span class="links_name">장난감</span>
+        </a>
+        <span class="tooltip">장난감</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- SHOP 마크업 -->
+  <!-- 헤더 -->
+  <div class="header-shop">
+    <!-- Nav -->
+    <div class="nav container">
+      <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+      <!-- Cart -->
+      <div class="cart">
+        <h2 class="cart-title">장바구니</h2>
+        <!-- Content -->
+        <div class="cart-content">
+        </div>
+        <!-- Total -->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">$0</div>
+        </div>
+        <!-- Buy Button -->
+        <button type="button" class="btn-buy">Buy Now</button>
+        <!-- Cart close -->
+        <i class="fa-solid fa-xmark" id="close-cart"></i>
+      </div>
+    </div>
+  </div>
+  <!-- Shop -->
+  <section class="shop-container">
+    <h2 class="section-title">Shop Products</h2>
+    <div class="shop-content">
+      <!-- Box1 -->
+      <div class="product-box">
+        <img src="../HTML/images/Shop/사료1.png" alt="" class="product-img">
+        <h2 class="product-title">now senior dog</h2>
+        <span class="price">16,000원</span>
+        <i class="fa-solid fa-cart-plus add-cart"></i>
+      </div>
+      <!-- Box2 -->
+      <div class="product-box">
+        <img src="../HTML/images/Shop/사료2.png" alt="" class="product-img">
+        <h2 class="product-title">canireo dog</h2>
+        <span class="price">16,000원</span>
+        <i class="fa-solid fa-cart-plus add-cart"></i>
+      </div>
+      <!-- Box3 -->
+      <div class="product-box">
+        <img src="../HTML/images/Shop/사료3.png" alt="" class="product-img">
+        <h2 class="product-title">royal canin</h2>
+        <span class="price">16,000원</span>
+        <i class="fa-solid fa-cart-plus add-cart"></i>
+      </div>
+      <!-- Box4 -->
+      <div class="product-box">
+        <img src="../HTML/images/Shop/사료4.png" alt="" class="product-img">
+        <h2 class="product-title">건강백서</h2>
+        <span class="price">16,000원</span>
+        <i class="fa-solid fa-cart-plus add-cart"></i>
+      </div>
+      <!-- Box5 -->
+      <div class="product-box">
+        <img src="../HTML/images/Shop/사료5.png" alt="" class="product-img">
+        <h2 class="product-title">피부에 좋은 건강백서</h2>
+        <span class="price">16,000원</span>
+        <i class="fa-solid fa-cart-plus add-cart"></i>
+      </div>
+      <!-- Box6 -->
+      <div class="product-box">
+        <img src="../HTML/images/Shop/사료6.png" alt="" class="product-img">
+        <h2 class="product-title">bone a pety</h2>
+        <span class="price">16,000원</span>
+        <i class="fa-solid fa-cart-plus add-cart"></i>
+      </div>
+      <!-- Box7 -->
+      <div class="product-box">
+        <img src="../HTML/images/Shop/사료7.png" alt="" class="product-img">
+        <h2 class="product-title">breath lung care</h2>
+        <span class="price">16,000원</span>
+        <i class="fa-solid fa-cart-plus add-cart"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 하단(footer) 마크업 -->
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-wrap">
+
+      <!-- 좌측 로고 부분 -->
+      <div class="logo">
+        <a href="../HTML/Intro.html" class="only_footer"><img class="logo" src="../HTML/images/로고/메인_로고.png" width="210"
+            height="89"></a>
+      </div>
+
+      <!-- 센터 부분 -->
+      <div class="footer-center">
+        <p><i class="fa-solid fa-location-dot"></i><b>서울시 관악구 봉천로 227 보라매샤르망</b></p>
+        <p><i class="fa-regular fa-copyright"></i><b>2020 한국정보교육원 All Rights Reserved.</b></p>
+
+        <i class="fa-solid fa-phone"></i><b>02-855-9611</b>
+        <i class="fa-solid fa-fax"></i><b>02-856-9742</b>
+        <i class="fa-regular fa-envelope"></i><b>amigo@naver.com</b>
+      </div>
+
+      <!-- SNS아이콘 부분 -->
+      <div class="sns-wrap">
+        <a href="https://www.instagram.com/" class="only_footer" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="40"></a>
+        <a href="https://www.youtube.com/" class="only_footer" target="_blank"><img
+            src="https://static-00.iconduck.com/assets.00/youtube-icon-512x511-qrlabbtf.png" width="40"></a>
+        <a href="https://www.facebook.com/" class="only_footer" target="_blank"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"
+            width="40"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 자바 스크립트 파트 -->
+
+  <script>
+    //새로고침 했을 때 맨 위로 이동
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    //사이드 메뉴바에 필요한 자바스크립트 생성하기
+
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+    });
+
+    function menuBtnChange() {
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+  </script>
+</body>
+
+</html>

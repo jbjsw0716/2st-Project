@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="../CSS/My_Page.css">
+  <script src="https://kit.fontawesome.com/2c827c8cca.js" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> <!-- Boxicons CDN 링크 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://kit.fontawesome.com/2c827c8cca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 상단(header) 마크업 -->
+
+  <header>
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <a class="header-a" href="../HTML/Intro.html"><img class="header-image" src="../HTML/images/로고/메인_로고.png"></a>
+      </div>
+
+      <div class="main_menu">
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Company_Introduction.html"><i
+                class="fa-solid fa-building-circle-exclamation"></i>&nbsp;&nbsp;<b><span>회사소개</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Affiliated_Store1.html"><i
+                class="fa-solid fa-house"></i>&nbsp;&nbsp;<b><span>가맹점</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Shop.html"><i class="fa-solid fa-shop"></i>&nbsp;&nbsp;<b><span>SHOP</pan>
+              </b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Pet_Sitter.html"><i
+                class="fa-solid fa-person-breastfeeding"></i>&nbsp;&nbsp;<b><span>펫시터</span></b></a>
+          </li>
+          <li class="navbar_item">
+            <a class="header-a" href="../HTML/Customer_Service.html"><i
+                class="fa-solid fa-phone-flip"></i>&nbsp;&nbsp;<b><span>고객센터</span></b></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main_access">
+        <ul class="navbar_access">
+          <li><a class="header-a" href="../HTML/Login.html"><b>로그인</b></a></li>
+          <li><a class="header-a" href="../HTML/Join.html"><b>회원가입</b></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 사이드바 메뉴 마크업 -->
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <div class="logo_name">My Page</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-1"></i>
+          <span class="links_name">즐겨찾기</span>
+        </a>
+        <span class="tooltip">즐겨찾기</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-2"></i>
+          <span class="links_name">주문 내역 확인</span>
+        </a>
+        <span class="tooltip">주문 내역 확인</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-3"></i>
+          <span class="links_name">쿠폰함</span>
+        </a>
+        <span class="tooltip">쿠폰함</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-4"></i>
+          <span class="links_name">이용 내역</span>
+        </a>
+        <span class="tooltip">이용 내역</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-5"></i>
+          <span class="links_name">회원 정보 수정</span>
+        </a>
+        <span class="tooltip">회원 정보 수정</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+  <main>
+    <div class="title">
+      <h2>마이 페이지</h2>
+    </div>
+
+    <section class="user-info">
+      <div class="profile">
+        <i class="fa-regular fa-user"></i>
+        <strong>남수호(nam0317)</strong>님
+        <p>안녕하세요!</p>
+      </div>
+
+      <div class="updateForm">
+        <a href="#">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span><strong>회원정보 수정</strong></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="activity-info">
+      <div class="sub-title">
+        <h2>나의 활동내역</h2>
+      </div>
+
+      <div class="activities">
+        <!-- 각 활동을 나타내는 카드 -->
+        <div class="activity-card">
+          <i class="fa-solid fa-receipt"></i>
+          <h3>주문 조회</h3>
+          <p>0 건</p>
+          <a href="#" class="btn">목록보기</a>
+        </div>
+
+        <div class="activity-card">
+          <i class="fa-solid fa-money-bill"></i>
+          <h3>쿠폰함</h3>
+          <p>0 건</p>
+          <a href="#" class="btn">목록보기</a>
+        </div>
+
+        <div class="activity-card">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <h3>장바구니</h3>
+          <p>0 건</p>
+          <a href="#" class="btn">목록보기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity-info">
+      <div class="sub-title">
+        <h2>나의 관심정보</h2>
+      </div>
+
+      <div class="activities">
+        <!-- 각 활동을 나타내는 카드 -->
+        <div class="activity-card">
+          <i class="fa-regular fa-building"></i>
+          <h3>가맹점</h3>
+          <p>0 건</p>
+          <a href="#" class="btn">목록보기</a>
+        </div>
+
+        <div class="activity-card">
+          <i class="fa-solid fa-dog"></i>
+          <h3>펫시터</h3>
+          <p>0 건</p>
+          <a href="#" class="btn">목록보기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 하단(footer) 마크업 -->
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-wrap">
+
+      <!-- 좌측 로고 부분 -->
+      <div class="logo">
+        <a href="../HTML/Intro.html" class="only_footer"><img class="logo" src="../HTML/images/로고/메인_로고.png" width="210"
+            height="89"></a>
+      </div>
+
+      <!-- 센터 부분 -->
+      <div class="footer-center">
+        <p><i class="fa-solid fa-location-dot"></i><b>서울시 관악구 봉천로 227 보라매샤르망</b></p>
+        <p><i class="fa-regular fa-copyright"></i><b>2020 한국정보교육원 All Rights Reserved.</b></p>
+
+        <i class="fa-solid fa-phone"></i><b>02-855-9611</b>
+        <i class="fa-solid fa-fax"></i><b>02-856-9742</b>
+        <i class="fa-regular fa-envelope"></i><b>amigo@naver.com</b>
+      </div>
+
+      <!-- SNS아이콘 부분 -->
+      <div class="sns-wrap">
+        <a href="https://www.instagram.com/" class="only_footer" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="40"></a>
+        <a href="https://www.youtube.com/" class="only_footer" target="_blank"><img
+            src="https://static-00.iconduck.com/assets.00/youtube-icon-512x511-qrlabbtf.png" width="40"></a>
+        <a href="https://www.facebook.com/" class="only_footer" target="_blank"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"
+            width="40"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 자바 스크립트 파트 -->
+
+  <script>
+    //새로고침 했을 때 맨 위로 이동
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+
+    /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+    //사이드 메뉴바에 필요한 자바스크립트 생성하기
+
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+    });
+
+    function menuBtnChange() {
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+  </script>
+</body>
+
+</html>

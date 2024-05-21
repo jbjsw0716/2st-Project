@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아미고</title>
+  <link rel="stylesheet" href="../CSS/Intro.css">
+</head>
+
+<body>
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 헤더 파트 -->
+  <header>
+    <!-- 로그인 -->
+    <!-- 모달 창 -->
+    <div id="myModal" class="modal">
+      <!-- 모달 내용 -->
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="login-card-cntainer">
+          <div class="login-card">
+            <div class="login-card-logo">
+              <img src="../HTML/images/로고/메인_로고.png" alt="logo">
+            </div>
+            <div class="login-card-header">
+              <h1>로그인</h1>
+              <div>아이디/패스워드를 입력해주세요.</div>
+            </div>
+            <form action="" class="login-card-form">
+              <div class="form-item">
+                <span class="form-item-icon material-symbols-outlined">mail</span>
+                <input type="text" placeholder="아이디를 입력하세요." required autofocus>
+              </div>
+              <div class="form-item">
+                <span class="form-item-icon material-symbols-outlined">lock</span>
+                <input type="password" placeholder="비밀번호를 입력하세요" required>
+              </div>
+              <div class="form-item-other">
+                <a href="#" class="pwd">비밀번호를 잃어버리셨나요?</a>
+              </div>
+              <button type="submit">로그인</button>
+            </form>
+            <div class="login-card-footer">
+              계정이 없으십니까? <a href="#" onclick="clickSignup()">회원가입</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 회원가입 -->
+    <div id="myModal2" class="modal">
+      <!-- 모달 내용 -->
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="container">
+          <form id="form" action="/">
+            <div class="logo">
+              <img src="../HTML/images/로고/메인_로고.png" alt="">
+            </div>
+            <h1>회원가입</h1>
+            <div class="input-control">
+              <span id="form-item-icon" class="fa-regular fa-user"></span>
+              <input type="userneme" placeholder="닉네임" id="username" name="username" type="text">
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <span id="form-item-icon" class="fa-regular fa-envelope"></span>
+              <input type="email" placeholder="이메일" id="email" name="username">
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <span id="form-item-icon" class="fa-regular fa-circle-user"></span>
+              <input type="text" placeholder="아이디" id="id" name="id">
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <span id="form-item-icon" class="fa-solid fa-key"></span>
+              <input type="password" placeholder="비밀번호" id="password" name="password">
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <span id="form-item-icon" class="fa-solid fa-key"></span>
+              <input type="password" placeholder="비밀번호 확인" id="password2" name="password2">
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <span id="form-item-icon" class="fa-regular fa-calendar-days"></span>
+              <input type="date" placeholder="생년월일" id="birthday" name="birthday">
+            </div>
+            <div class="input-control">
+              <span id="form-item-icon-zip" class="fa-solid fa-house icon"></span>
+              <input type="addr" placeholder="주소" id="addr" name="addr">
+              <input type="addr2" placeholder="상세주소" id="addr2" name="addr2">
+            </div>
+            <button type="submit" class="button">가입완료</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- 인트로 상단 마크업 -->
+    <img class="brand" src="../HTML/images/로고/Amigo 인트로 로고.png" alt="Intro_Logo">
+    <div class="menu-btn"></div>
+
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="Company_Introduction.html">회사소개</a>
+        <a href="Affiliated_Store1.html">가맹점</a>
+        <a href="Shop.html">SHOP</a>
+        <a href="Pet_Sitter.html">펫시터</a>
+        <a href="Customer_Service.html">고객센터</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 섹션 파트 -->
+  <section class="home">
+    <!-- 인트로 페이지 배경에 들어갈 비디오 마크업
+    autoplay - 페이지 로드 시 자동 재생 / muted - 비디오 소리 음소거 / loop - 비디오 재생이 끝나면 처음부터 다시 재생 -->
+    <video class="introvideo" src="../HTML/images/인트로/인트로 영상.mp4" autoplay muted loop></video>
+    <!-- <video class="introvideo" src="../HTML/images/인트로 영상2.mp4" autoplay muted loop></video> -->
+
+    <!-- 인트로 중간에 배치할 섹션 마크업 -->
+    <div class="content">
+      <h1>AMIGO<br><span>With the pets</span></h1>
+      <p>OF THE PET, BY THE PET, FOR THE PET<br>반려동물의 케어를 위한 올인원 서비스 플랫폼<br>AMIGO는 Pet-Friendly 정책을 응원합니다.</p>
+
+      <!-- 인트로 카피라이터 1 -->
+      <!-- <p>반려동물의 행복을 최우선을 하며<br>
+         고객 만족을 위해 항상 노력하는<br>
+         가장 믿을 수 있는 브랜드 AMIGO</p> -->
+
+      <!-- 인트로 카피라이터 3 -->
+      <!-- <p>AMIGO는 반려동물과 함께<br>
+        고객의 행복을 만들어가는<br>
+        행복한 삶을 공유합니다.</p> -->
+
+      <!-- 인트로 카피라이터 4 -->
+      <!-- <p>OF THE PET, BY THE PET, FOR THE PET<br>
+        반려동물의 케어를 위한 올인원 서비스 플랫폼<br>
+         AMIGO는 Pet-Friendly 정책을 응원합니다.
+      </p> -->
+
+      <a href="../HTML/Join.html">회원가입</a>
+      <a href="../HTML/Login.html">로그인</a>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- 반응형 네비게이션 메뉴(Javascript of responsive navigation menu) -->
+  <script type="text/javascript">
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    //클릭 시 메뉴 버튼 활성화
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    // 모달 열기
+    function openModal(type) {
+      document.getElementById("myModal").style.display = "block";
+      if (type === 'login') {
+        document.getElementById("modal-title").innerText = '로그인';
+        document.getElementById("modal-footer").innerHTML = '계정이 없으십니까? <a href="#" onclick="clickSignup()">회원가입</a>';
+        document.getElementById("modal-submit").innerText = '로그인';
+      } else if (type === 'join') {
+        document.getElementById("myModal2").style.display = "block";
+        document.getElementById("modal-title").innerText = '회원가입';
+        document.getElementById("modal-footer").innerHTML = '이미 계정이 있으십니까? <a href="#" onclick="clickLogin()">로그인</a>';
+        document.getElementById("modal-submit").innerText = '회원가입';
+      }
+    }
+
+    // 모달 닫기
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+      document.getElementById("myModal2").style.display = "none";
+    }
+
+    // 모달 외부 클릭 시 닫기
+    window.onclick = function (event) {
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+      var modal2 = document.getElementById("myModal2");
+      if (event.target == modal2) {
+        modal2.style.display = "none";
+      }
+    }
+    // 회원가입 버튼 클릭 시 로그인 모달로 전환
+    function clickLogin() {
+      openModal('login');
+    }
+
+    // 로그인 버튼 클릭 시 회원가입 모달로 전환
+    function clickSignup() {
+      openModal('join');
+    }
+  </script>
+
+</body>
+
+</html>

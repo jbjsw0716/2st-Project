@@ -1,0 +1,837 @@
+@font-face {
+  font-family: "Nanum AmSeuTeReuDam";
+  src: url("../HTML/font/나눔손글씨\ 암스테르담.ttf") format("truetype");
+}
+
+/* 전체 규격 정의 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* 해당 메뉴에 대한 소개로 이동하는 스타일 정의(스크롤)  */
+html {
+  scroll-behavior: smooth;
+}
+
+/* body 전체 배경색 정의 */
+body {
+  background: rgb(242, 229, 217);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 헤더(Header) 파트 */
+
+header {
+  position: fixed;
+  top: 0;
+  /* width: 1707px; */
+  width: 100%;
+  z-index: 9999;
+  background: #2a1614;
+}
+
+.navbar_logo {
+  justify-content: center;
+  align-items: center;
+}
+
+.header-image {
+  width: 163px;
+  height: 62px;
+}
+
+.header-a {
+  text-decoration: none;
+  color: #eee;
+  font-size: 18px;
+}
+
+.navbar_access.active {
+  text-align: center;
+}
+
+.navbar_access {
+  margin-top: 10%;
+  float: right;
+  padding-right: 0px;
+}
+
+/* 해당 요소의 내용 앞에 가상으로 삽입된 요소 선택(카테고리에 밑줄 주기) */
+/* 해당 메뉴에 마우스를 올렸을 때 이벤트 효과 나타내기(카테고리 밑줄 크기 지정) */
+.navbar_item a span {
+  position: relative;
+}
+
+.navbar_item a span::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: red;
+  transition: 0.3s ease;
+}
+
+.navbar_item a:hover span::after {
+  width: 100%;
+}
+
+.navbar_item a:hover span::after {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 35px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.navbar_menu {
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main_menu {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.navbar_menu {
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+
+.navbar_item {
+  position: relative;
+}
+
+.navbar_item a {
+  padding: 0.4em;
+  display: block;
+  color: #eee;
+  font-size: 20px;
+}
+
+.navbar_item a:hover {
+  color: red;
+}
+
+.navbar_access {
+  list-style: none;
+  display: flex;
+  margin: 10px;
+  padding-left: 0;
+}
+
+.navbar_access li {
+  margin-left: 0;
+  padding: 8px 20px;
+}
+
+.navbar_access a:hover {
+  color: red;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 사이드 메뉴바 만들기 */
+
+/* 사이드바 틀 스타일 정의*/
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  height: 400px;
+  width: 78px;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+
+/* 사이드바가 열렸을 때 너비 스타일 정의 */
+.sidebar.open {
+  width: 200px;
+}
+
+/* 사이드바 상단 스타일 정의 */
+.sidebar .logo-details {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 10px 0;
+}
+
+/* 사이드바가 열렸을 때 상단 스타일 정의 */
+.sidebar .logo-details .icon {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* 사이드바가 열렸을 때 상단 텍스트(상위 메뉴) 스타일 정의 */
+.sidebar .logo-details .logo_name {
+  color: #333;
+  font-size: 23px;
+  font-weight: 700;
+  opacity: 0;
+  transition: all 0.5s ease;
+  text-align: center;
+  padding: 7px;
+}
+
+/* 사이드바가 열렸을 때 상단 텍스트 나타내기 */
+.sidebar.open .logo-details .logo_name {
+  opacity: 1;
+}
+
+/* 사이드바 상단 버튼 스타일 정의 - 열렸을 때도 동일 */
+.sidebar .logo-details #btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition: all 0.4s ease;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+/* 사이드바가 열렸을 때 닫기 버튼 스타일 정의 */
+.sidebar.open .logo-details #btn {
+  text-align: right;
+  color: #333;
+  min-width: 28px;
+  font-size: 38px;
+  padding-top: 5px;
+}
+
+/* 사이드바 <i>태그 전체 스타일 정의 */
+.sidebar i {
+  color: #333;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* 사이드바 리스트(하위메뉴) 마진 스타일 정의 */
+.sidebar .nav-list {
+  margin-top: 30px;
+}
+
+/* 사이드바 li 속성 스타일 정의 */
+.sidebar li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+/* 사이드바 활성화 전, 하위 메뉴에 커서 올렸을 때 나타나는 텍스트 스타일 정의 */
+.sidebar li .tooltip {
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+
+/* 사이드바 활성화 전, 하위 메뉴(li) 이벤트 발생 시 나타나는 툴팁박스 스타일 정의 */
+.sidebar li:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 사이드바 열렸을 땐 툴팁박스 숨기기 */
+.sidebar.open li .tooltip {
+  display: none;
+}
+
+/* 사이드바 li 속성 안에 있는 모든 <a> 태그 스타일 정의 - 하위 메뉴 박스 */
+.sidebar li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #bcbcbc;
+}
+
+/* 사이드바 하위 메뉴 박스 이벤트 발생 시 색상 스타일 정의 */
+.sidebar li a:hover {
+  background: #fff;
+}
+
+/* 사이드바 하위 메뉴(li) 텍스트 스타일 정의 */
+.sidebar li a .links_name {
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  padding-bottom: 2px;
+}
+
+/* 사이드바 열렸을 때 하위 메뉴 텍스트 보여주기 */
+.sidebar.open li a .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 사이드바 열렸을 때, 하위 메뉴에 이벤트 발생 시 텍스트와 <i> 태그 스타일 정의 */
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+  transition: all 0.5s ease;
+  color: #11101d;
+}
+
+/* 사이드바 li 속성 안의 모든 <i> 태그 스타일 정의 */
+.sidebar li i {
+  height: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  border-radius: 12px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 본문 내용(main) 파트 */
+
+/* 섹션 전체 스타일 정의 */
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 100px;
+  color: black;
+}
+
+/* 인사말에 있는 소셜 아이콘 색깔 스타일 정의 */
+.fa-facebook {
+  width: 32px;
+  height: 32px;
+}
+
+/* 인사말에 있는 소셜 아이콘 색깔 스타일 정의 */
+.fa-instagram {
+  width: 32px;
+  height: 32px;
+}
+
+/* 인사말에 있는 소셜 아이콘 색깔 스타일 정의 */
+.fa-twitter {
+  width: 35.5px;
+  height: 31px;
+}
+
+/* 인사말에 있는 소셜 아이콘 색깔 스타일 정의 */
+.fa-youtube {
+  width: 52px;
+  height: 35px;
+}
+
+/* 해당 클래스(섹션 바로 밑) 스타일 정의 */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#sec-01,
+#sec-02,
+#sec-03,
+#sec-04 {
+  padding-top: 80px;
+}
+
+/* 해당 클래스 제목 글씨 크기 및 위치 스타일 정의 */
+.main-title {
+  font-size: 4em;
+  margin-bottom: 50px;
+}
+
+/* 해당 클래스(container 클래스 바로 밑) 스타일 정의 */
+.content {
+  position: relative;
+  width: 1150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 해당 클래스 스타일 정의 */
+.content .image {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* 해당 클래스의 이미지 스타일 정의 */
+.content .image img {
+  z-index: 111;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* 조직도에 들어가는 이미지 스타일 정의 */
+.content .image .o-chart {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 해당 클래스(h3와 p를 묶는 텍스트 박스 역할) 스타일 정의 -> 적용하면 이미지와 텍스트 박스가 적절하게 배치됨 */
+.content .text-box {
+  z-index: 222;
+  background: rgba(192, 192, 192, 0.5);
+  /* backdrop-filter: blur(20px); */
+  padding: 40px;
+  max-width: 600px;
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+  border-radius: 10px;
+  transform: translate(-30px, 0);
+}
+
+/* 해당 클래스 h3 스타일 정의 */
+.content .text-box h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* 해당 클래스 <p> 태그 스타일 정의 */
+.content .text-box p {
+  text-align: justify;
+}
+
+/* 해당 클래스(p태그 중에서도 p라는 클래스) 스타일 정의 */
+.content .text-box .p {
+  text-align: center;
+}
+
+/* 미디어 아이콘 스타일 정의(마진을 줘서 본문 내용과 거리주기) */
+.media-icons {
+  margin-top: 20px;
+}
+
+/* 각각의 미디어 아이콘(a태그)에 스타일 정의 */
+.media-icons a {
+  color: black;
+  font-size: 2em;
+  margin: 60px;
+}
+
+/* 해당 클래스(h3 내용) 스타일 정의 */
+.section-title {
+  font-size: 4em;
+  margin-bottom: 40px;
+}
+
+/* 해당 클래스(h4 내용) 스타일 정의 */
+.info-title {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+/* 해당 클래스(h4와 p 내용) 스타일 정의 */
+.info {
+  width: 700px;
+  margin-left: 50px;
+}
+
+/* 해당 클래스 미디어 아이콘 스타일 정의 */
+.media-info {
+  width: 400px;
+  margin-left: 50px;
+}
+
+/* 해당 클래스의 li 속성 스타일 정의 */
+.media-info li {
+  list-style: none;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* 해당 클래스의 li 속성 중 마지막 자식(last-child)을 제외한 요소에 대해 스타일 정의 */
+.media-info li:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+/* 해당 클래스의 li 속성 중 1번째, 5번째 자식 요소에 대해 스타일 정의 */
+.media-info li:nth-child(1),
+.media-info li:nth-child(5) {
+  padding-left: 100px;
+}
+
+/* 해당 클래스의 li 속성 중 2번째, 4번째 자식 요소에 대해 스타일 정의 */
+.media-info li:nth-child(2),
+.media-info li:nth-child(4) {
+  padding-left: 50px;
+}
+
+/* 연혁에서 타이틀 제목을 제외한 본문 스타일 정의 */
+.process-wrapper {
+  margin: auto;
+  max-width: 1080px;
+}
+
+/* 연혁에서 해당 아이디(타임라인바) 스타일 정의 */
+#progress-bar-container {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  height: 100px;
+  margin-top: 50px;
+}
+
+/* 연혁에서 ul 속성에 해당하는 부분만 스타일 정의 */
+#progress-bar-container ul {
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+  z-index: 9998;
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+}
+
+/* 연혁에서 타임라인바에 필요한 기호(원 만들기) 스타일 정의 */
+#progress-bar-container li::before {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px black;
+  transition: all ease 0.3s;
+}
+
+/* 연혁에서 이벤트(마우스 커서 갖다대기) 발생 시 원에 색깔 주는 스타일 정의 */
+#progress-bar-container li.active::before,
+#progress-bar-container li:hover::before {
+  background: #954535;
+}
+
+/* 연혁에서 타임라인바 만들기 - li 속성의 텍스트와 원 스타일 정의 */
+#progress-bar-container li {
+  list-style: none;
+  float: left;
+  width: 20%;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all ease 0.2s;
+  vertical-align: bottom;
+  height: 59px;
+  position: relative;
+}
+
+/* 연혁에서 해당 클래스의 텍스트(li 속성의 텍스트) 스타일 정의 */
+#progress-bar-container li .step-inner {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 14px;
+}
+
+/* 연혁에서 해당 클래스의 텍스트(li 속성의 텍스트) 이벤트 발생 시 스타일 정의 */
+#progress-bar-container li.active,
+#progress-bar-container li:hover {
+  color: #954535;
+}
+
+/* 연혁에서 li요소들의 가상 요소 ::after 스타일 정의(li 요소 뒤에 원형의 콘텐츠를 추가하고 스타일 하기)*/
+#progress-bar-container li::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #777;
+  margin: auto;
+  border: solid 7px white;
+  border-radius: 50%;
+  margin-top: 40px;
+  box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+  transition: all ease 0.2s;
+}
+
+/* 연혁에서 가상 요소 ::after의 이벤트 발생 시 색깔 스타일 정의 */
+#progress-bar-container li:hover::after {
+  background: #954535;
+}
+
+/* 연혁에서 해당 리스트 항목을 활성화할 때(클릭한 순간) 가상 요소 ::after를 선택하는 스타일 정의 */
+#progress-bar-container li:active::after {
+  background: #954535;
+}
+
+/* 연혁에서 타임라인바 라인 생성 및 스타일 정의 */
+#progress-bar-container #line {
+  width: 80%;
+  margin: auto;
+  background: #eee;
+  height: 5px;
+  position: absolute;
+  left: 10%;
+  top: 57px;
+  z-index: 1;
+  border-radius: 50px;
+  transition: all ease 0.9s;
+}
+
+/* 연혁에서 타임라인바의 라인 게이지(?) 채워주는 스타일 정의 */
+#progress-bar-container #line-progress {
+  content: "";
+  width: 3%;
+  height: 100%;
+  background: #954535;
+  /* 그라디언트(linear-gradient)는 색상이 서서히 변하는 효과를 만들기 위해 사용되는 그래픽 기법 */
+  background: linear-gradient(
+    to right,
+    #954535 0%,
+    #954535 100%
+  ); /* 왼쪽에서 오른쪽으로 해당 색깔이 채워짐 */
+  position: absolute;
+  z-index: 2;
+  border-radius: 50px;
+  transition: all ease 0.9s;
+}
+
+/* 연혁에서 해당 아이디(타임라인 내용을 담아주는 역할) 스타일 정의 */
+#progress-content-section {
+  width: 90%;
+  margin: auto;
+  /* background: #f3f3f3; */
+  background: rgba(192, 192, 192, 0.5);
+  border-radius: 4px;
+}
+
+/* 연혁에서 본문 내용과 해당 아이디의 스타일 정의 */
+#progress-content-section .section-content {
+  padding: 30px 40px;
+  text-align: center;
+  display: none;
+  animation: FadeInUp 700ms ease 1;
+  animation-fill-mode: forwards;
+  transform: translateY(15px);
+  opacity: 0;
+}
+
+/* 연혁에서 본문 내용 제목(h2) 스타일 정의 */
+#progress-content-section .section-content h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  /* color: #333; */
+  color: black;
+  letter-spacing: 1px;
+}
+
+/* 연혁에서 본문 내용(p) 스타일 정의 */
+#progress-content-section .section-content p {
+  font-size: 20px;
+  line-height: 1.8em;
+  /* color:#333; */
+  color: black;
+  text-align: justify;
+}
+
+/* 연혁에서 본문 내용 숨기기 */
+#progress-content-section .section-content.active {
+  display: block;
+}
+
+/* 요소를 위로 이동하면서 페이드 인하는 효과를 제공 */
+@keyframes FadeInUp {
+  /* 애니메이션이 시작될 때의 상태. 요소를 위로 15px 이동시키고 투명도를 0으로 설정하여 요소가 완전히 투명해지게 함 */
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+
+  /* 애니메이션이 끝날 때의 상태. 요소를 위로 이동하지 않고(0px) 투명도를 1로 설정하여 요소가 완전히 표시되게 함 */
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* 연혁에서 본문 내용 스타일 정의 */
+#progress-content-section .section-content {
+  padding: 30px 40px;
+  text-align: center;
+}
+
+/* 배경 이미지 스타일 정의 */
+.sec-01,
+.sec-02,
+.sec-03,
+.sec-04 {
+  background-size: 100% 100%;
+  margin: 0 200px;
+  box-sizing: border-box;
+}
+
+/* 인사 파트 배경 이미지 넣기 */
+.sec-01 {
+  background-image: url(../HTML/images/회사소개/인사_배경.jpg);
+  width: 1307px;
+  margin-top: 80px;
+}
+
+/* 조직도 파트 배경 이미지 넣기 */
+.sec-02 {
+  background-image: url(../HTML/images/회사소개/조직도_배경.jpg);
+  width: 1307px;
+}
+
+/* 연혁 파트 배경 이미지 넣기 */
+.sec-03 {
+  background-image: url(../HTML/images/회사소개/연혁_배경.jpg);
+  width: 1307px;
+}
+
+/* 오시는 길 파트 배경 이미지 넣기 */
+.sec-04 {
+  background-image: url(../HTML/images/회사소개/오시는길_배경.jpg);
+  width: 1307px;
+}
+
+/* Set the size of the map */
+#map {
+  margin: 0 auto;
+  width: 100%; /* 지도 넓이 */
+  height: 100%; /* 지도 높이 */
+  /* border: 5px solid brown; */
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 하단(footer) 파트 */
+
+/* 해당 클래스 a태그 밑줄 제거 */
+.only_footer {
+  text-decoration: none;
+}
+
+/* 하단(footer) 전체 스타일 정의 */
+.footer {
+  background-color: #333232;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* 하단(footer)에 들어가는 모든 내용을 감싸는 해당 클래스 스타일 정의 */
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 내용을 세로 방향으로 중앙 정렬 */
+  margin: 0 auto; /* 좌우 마진을 자동으로 설정하여 수평 가운데 정렬 */
+  font-size: 17px;
+}
+
+/* footer 내부의 각 항목 스타일 */
+.logo,
+.footer-center,
+.sns-wrap {
+  flex: 1; /* 각 요소가 동일한 비율로 공간을 차지하도록 설정 */
+  margin: 0 40px;
+}
+
+/* 하단(footer) 센터에 들어갈 내용 스타일 정의 */
+.footer-center {
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+/* 하단(footer) 센터에 들어가는 텍스트 스타일 정의 */
+.footer-center i {
+  margin-right: 10px;
+}
+
+/* 하단(footer) 좌측의 로고 스타일 정의 */
+.logo {
+  float: left;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+/* 하단(footer) 우측의 <a> 태그를 감싸는 스타일 정의 */
+.sns-wrap {
+  vertical-align: middle;
+}
+
+/* 하단(footer) 우측의 각각의 <a> 태그 스타일 정의 */
+.sns-wrap a {
+  display: inline-block;
+  margin: 0 10px;
+  padding-right: 20px;
+}
+
+/* 미디어 쿼리를 사용하여 화면 크기에 따른 반응형 스타일 적용 */
+@media (max-width: 768px) {
+  .footer-wrap {
+    flex-direction: row; /* 요소들이 가로로 배열되도록 변경 */
+    flex-wrap: wrap; /* 화면이 좁아지면 요소들이 다음 줄로 넘어갈 수 있게 설정 */
+    text-align: center;
+  }
+
+  .logo,
+  .footer-center,
+  .sns-wrap {
+    flex: 1 1 100%; /* 모바일에서는 각 요소가 전체 너비를 차지하도록 설정 */
+    margin: 10px 0;
+    text-align: center; /* 텍스트 중앙 정렬 */
+  }
+
+  .sns-wrap a {
+    margin: 0 5px; /* SNS 아이콘 사이의 간격을 줄임 */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-wrap {
+    padding: 0 10px;
+  }
+
+  .sns-wrap a img {
+    width: 30px; /* SNS 아이콘 크기를 줄임 */
+    height: 30px;
+  }
+}

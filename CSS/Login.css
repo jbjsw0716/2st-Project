@@ -1,0 +1,654 @@
+/* 전체 규격 정의 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Nanum AmSeuTeReuDam'; */
+  font-family: sans-serif;
+}
+
+/* 해당 메뉴에 대한 소개로 이동하는 스타일 정의(스크롤)  */
+html {
+  scroll-behavior: smooth;
+}
+
+/* body 전체 배경색 정의 */
+body {
+  background: rgb(242, 229, 217);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 헤더(Header) 파트 */
+
+header {
+  /* position: fixed; */
+  position: absolute;
+  top: 0;
+  /* width: 1707px; */
+  width: 100%;
+  z-index: 9999;
+  background: #2a1614;
+}
+
+.navbar_logo {
+  justify-content: center;
+  align-items: center;
+}
+
+.header-image {
+  width: 163px;
+  height: 62px;
+}
+
+.header-a {
+  text-decoration: none;
+  color: #eee;
+  font-size: 18px;
+}
+
+.navbar_access.active {
+  text-align: center;
+}
+
+.navbar_access {
+  margin-top: 10%;
+  float: right;
+  padding-right: 0px;
+}
+
+/* 해당 요소의 내용 앞에 가상으로 삽입된 요소 선택(카테고리에 밑줄 주기) */
+/* 해당 메뉴에 마우스를 올렸을 때 이벤트 효과 나타내기(카테고리 밑줄 크기 지정) */
+.navbar_item a span {
+  position: relative;
+}
+
+.navbar_item a span::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: red;
+  transition: 0.3s ease;
+}
+
+.navbar_item a:hover span::after {
+  width: 100%;
+}
+
+.navbar_item a:hover span::after {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 35px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.navbar_menu {
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main_menu {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.navbar_menu {
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+
+.navbar_item {
+  position: relative;
+}
+
+.navbar_item a {
+  padding: 0.4em;
+  display: block;
+  color: #eee;
+  font-size: 20px;
+}
+
+.navbar_item a:hover {
+  color: red;
+}
+
+.navbar_access {
+  list-style: none;
+  display: flex;
+  margin: 10px;
+  padding-left: 0;
+}
+
+.navbar_access li {
+  margin-left: 0;
+  padding: 8px 20px;
+}
+
+.navbar_access a:hover {
+  color: red;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 사이드 메뉴바 만들기 */
+
+/* 사이드바 틀 스타일 정의*/
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  height: 400px;
+  width: 78px;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+
+/* 사이드바가 열렸을 때 너비 스타일 정의 */
+.sidebar.open {
+  width: 200px;
+}
+
+/* 사이드바 상단 스타일 정의 */
+.sidebar .logo-details {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 10px 0;
+}
+
+/* 사이드바가 열렸을 때 상단 스타일 정의 */
+.sidebar .logo-details .icon {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* 사이드바가 열렸을 때 상단 텍스트(상위 메뉴) 스타일 정의 */
+.sidebar .logo-details .logo_name {
+  color: #333;
+  font-size: 23px;
+  font-weight: 700;
+  opacity: 0;
+  transition: all 0.5s ease;
+  text-align: center;
+  padding: 7px;
+}
+
+/* 사이드바가 열렸을 때 상단 텍스트 나타내기 */
+.sidebar.open .logo-details .logo_name {
+  opacity: 1;
+}
+
+/* 사이드바 상단 버튼 스타일 정의 - 열렸을 때도 동일 */
+.sidebar .logo-details #btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition: all 0.4s ease;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+/* 사이드바가 열렸을 때 닫기 버튼 스타일 정의 */
+.sidebar.open .logo-details #btn {
+  text-align: right;
+  color: #333;
+  min-width: 28px;
+  font-size: 38px;
+  padding-top: 5px;
+}
+
+/* 사이드바 <i>태그 전체 스타일 정의 */
+.sidebar i {
+  color: #333;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* 사이드바 리스트(하위메뉴) 마진 스타일 정의 */
+.sidebar .nav-list {
+  margin-top: 30px;
+}
+
+/* 사이드바 li 속성 스타일 정의 */
+.sidebar li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+/* 사이드바 활성화 전, 하위 메뉴에 커서 올렸을 때 나타나는 텍스트 스타일 정의 */
+.sidebar li .tooltip {
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+
+/* 사이드바 활성화 전, 하위 메뉴(li) 이벤트 발생 시 나타나는 툴팁박스 스타일 정의 */
+.sidebar li:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 사이드바 열렸을 땐 툴팁박스 숨기기 */
+.sidebar.open li .tooltip {
+  display: none;
+}
+
+/* 사이드바 li 속성 안에 있는 모든 <a> 태그 스타일 정의 - 하위 메뉴 박스 */
+.sidebar li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #bcbcbc;
+}
+
+/* 사이드바 하위 메뉴 박스 이벤트 발생 시 색상 스타일 정의 */
+.sidebar li a:hover {
+  background: #fff;
+}
+
+/* 사이드바 하위 메뉴(li) 텍스트 스타일 정의 */
+.sidebar li a .links_name {
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  padding-bottom: 2px;
+}
+
+/* 사이드바 열렸을 때 하위 메뉴 텍스트 보여주기 */
+.sidebar.open li a .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 사이드바 열렸을 때, 하위 메뉴에 이벤트 발생 시 텍스트와 <i> 태그 스타일 정의 */
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+  transition: all 0.5s ease;
+  color: #11101d;
+}
+
+/* 사이드바 li 속성 안의 모든 <i> 태그 스타일 정의 */
+.sidebar li i {
+  height: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  border-radius: 12px;
+}
+
+/* 모달 창 스타일 */
+.modal {
+  display: none;
+  /* 초기에는 숨김 상태 */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 배경 투명도 */
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 520px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* 모달 닫기 버튼 스타일 */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 로그인 css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+body{
+  font-family: "Nanum Gothic", sans-serif;
+  min-height: 100vh;
+  /* background: linear-gradient(to right, #fff6a5,#b8ffdc); */
+  /* background: linear-gradient(to right, #fff6a5,rgb(255, 255, 255),#fff6a5); */
+  background: rgb(242, 229, 217);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 회원가입 전체 */
+.login-card{
+  width: 450px;
+  background: rgba(255, 226, 189, 0.308);
+  padding: 4rem;
+  border-radius: 5px;
+  position: relative;
+  border: 2px solid rgb(214, 183, 153);
+}
+/* 회원가입 전체의 레이아웃 */
+/*가상 앞에 붙음*/
+/* .login-card::before{  
+  content: '';
+  position: absolute;
+  background: rgba(145,255,123,0.3);
+  inset: 0;
+  transform: rotate(-5deg);
+  z-index: -1;
+} */
+/* 로고 */
+.login-card-logo{
+  margin-bottom: 2rem;
+}
+/* 로고 이미지 */
+.login-card-logo img{
+  width: 200px;
+}
+/* 로고 헤더 풋터 */
+.login-card-logo,
+.login-card-header,
+.login-card-footer{
+  text-align: center;
+}
+/* 비밀번호를 잃어버리셨나요? */
+.login-card a {
+  text-decoration: none;
+  color: #35339a;
+  text-align: center;
+  margin: auto;
+}
+/* 비번 잃어버림? 마우스 올렸을때 */
+.login-card a:hover{
+  text-decoration: underline; /*마우스 올렸을 때 밑 선 나옴*/
+}
+/* 헤더 */
+.login-card-header {
+  margin-bottom: 2rem;
+}
+/* 헤더의 '로그인' */
+.login-card-header h1{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+/* 헤더 안에 '로그인','입력해주세요' */
+.login-card-header h1+div{
+  font-size: calc(1rem*.8); /*크기 조절할 때 반응?*/
+  opacity: .8; /*투명도*/
+}
+/* 입력창부터 - 로그인 버튼까지 */
+.login-card-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* '아이디를 입력,비밀번호를 입력' */
+.login-card-form .form-item{
+  position: relative;
+}
+/* 위의 아이콘 */
+.login-card-form .form-item .form-item-icon{
+  position: absolute;
+  top: .82rem;
+  left: 1.4rem;
+  font-size: 1.3rem;
+  opacity: .6;
+}
+/* 비밀번호를 잃어버리셨나요? */
+.login-card-form .form-item-other{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(1rem*.8);
+  margin-bottom: .5rem;
+}
+/* 회원가입으로 넘어가는 */
+.login-card-footer{
+  margin: 1.5rem;
+  font-size: calc(1rem*.8);
+}
+/* 인풋 안에 글씨 */
+.login-card input[type="text"],
+.login-card input[type="password"]{
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,.3);
+  padding: 1rem 1.5rem;
+  padding-left: calc(1rem * 3.5);
+  width: 100%;
+  border-radius: 100px;
+  transition: background .5s;
+}
+/* 인풋 눌렀을때 */
+.login-card input:focus{
+  background: white;
+}
+/* 로그인 버튼 */
+.login-card-form button{
+  /* background: black; */
+  background: white;
+  /* color: white; */
+  color: black;
+  padding: 1rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background .5s;
+  border: none;
+}
+/* 로그인 버튼 마우스 올렸을때 */
+.login-card-form button:hover{
+  background-color: rgba(196, 143, 94, 0.322);
+  cursor: pointer;
+}
+
+/* 반응형 */
+
+@media (max-width: 768px) {
+
+  body{
+      padding: 2rem 0;
+  }
+  .login-card{
+      width: 300px;
+      padding: 2rem;
+  }
+}
+/* 회원가입 */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins',sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(242, 229, 217);
+}
+/* 회원가입 전체 */
+#form{
+  width: 450px;
+  background: rgba(255, 226, 189, 0.308);
+  padding: 4rem;
+  border-radius: 5px;
+  position: relative;
+  border: 2px solid rgb(214, 183, 153);
+}
+/* 회원가입 전체의 앞 레이아웃 */
+/* #form:before{
+  content: '';
+  position: absolute;
+  background: rgba(145,255,123,0.3);
+  inset: 0;
+  transform: rotate(-5deg);
+  z-index: -1;
+} */
+/* 로고 */
+.logo img{
+  width: 200px;
+  margin: auto 60px;
+}
+/* 회원가입 */
+#form h1{
+  color: #0f2027;
+  text-align: center;
+}
+/* 회원가입 버튼 */
+#form button{
+  background: white;
+  color: black;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background .5s;
+  border: none;
+  margin : 3rem 0;
+}
+/* 회원가입 버튼 마우스 올렸을때 */
+#form button:hover{
+  background-color: rgba(196, 143, 94, 0.322);
+  cursor: pointer;
+}
+/* 각각의 인풋 */
+.input-control{
+  /* display: flex; */
+  /* flex-direction: column; */
+  margin-top: 15px;
+  position: relative;
+}
+/* 주소 */
+.input-control input[type="addr"]{
+  margin-top: 30px;
+}
+/* 상세주소 */
+.input-control input[type="addr2"]{
+  margin-top: 10px;
+}
+/* 각 아이콘 */
+.input-control #form-item-icon{
+  position: relative;
+}
+/* 각 아이콘 */
+.input-control #form-item-icon{
+  position: absolute;
+  top: .82rem;
+  left: 1.4rem;
+  font-size: 1.2rem;
+  opacity: .6;
+}
+/* 주소 아이콘 */
+.input-control #form-item-icon-zip{
+  position: absolute;
+  top: .82rem;
+  left: 1.4rem;
+  font-size: 1.03rem;
+  opacity: .6;
+}
+/* 각 인풋 타입 */
+.input-control input[type="userneme"],
+.input-control input[type="email"],
+.input-control input[type="text"],
+.input-control input[type="password"],
+.input-control input[type="date"],
+.input-control input[type="addr"],
+.input-control input[type="addr2"]{
+  border: none;
+  border-radius: 100px;
+  display: block;
+  font-size: 12px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  background: rgba(255,255,255,.3);
+  transition: background .5s;
+}
+/* 생년월일 */
+.input-control #birthday{
+  text-indent: 15px;
+  color: #777;
+}
+/* 인풋에 텍스트 위치,포커스 조절 */
+.input-control input{
+  text-indent: 30px;
+}
+.input-control input:focus{
+  background: white;
+}
+.input-control input:focus{
+  outline: 0;
+}
+
+/* 에러났을때 */
+.input-control.success input{
+  border-color: #09c372
+}
+.input-control.error input{
+  border-color: #ff3860;
+}
+.input-control .error{
+  color: #ff3860;
+  font-size: 12px;
+  height: 13px;
+  text-align: right;
+}
